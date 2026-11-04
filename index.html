@@ -91,15 +91,16 @@ footer{margin-top:64px;padding:28px 0 60px;border-top:1px solid var(--line);colo
 footer p{margin:0 0 8px}
 footer .src a{color:var(--mist)}
 /* dialog */
-dialog{border:0;padding:0;background:transparent;color:var(--cream);max-width:min(980px,calc(100vw - 32px));width:100%;max-height:calc(100vh - 32px)}
+dialog{border:0;padding:0;background:transparent;color:var(--cream);max-width:min(980px,calc(100vw - 32px));width:100%;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:visible}
+html:has(dialog[open]){overflow:hidden}
 dialog::backdrop{background:rgba(6,12,10,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 dialog[open]{animation:pop .45s cubic-bezier(.2,.7,.2,1)}
 @keyframes pop{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
-.dlg{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--moss);border:1px solid var(--line);border-radius:28px;overflow:hidden;max-height:calc(100vh - 32px)}
+.dlg{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--moss);border:1px solid var(--line);border-radius:28px;overflow:hidden;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px)}
 .dlg .pic{position:relative;min-height:420px}
 .dlg .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%}
 .dlg .pic:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 70%,var(--moss))}
-.dlg .body{padding:30px 32px 28px;overflow:auto}
+.dlg .body{padding:30px 32px 28px;overflow:auto;overscroll-behavior:contain;max-height:calc(100vh - 34px);max-height:calc(100dvh - 34px)}
 .x{position:absolute;top:14px;right:14px;z-index:3;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(16,29,25,.7);color:var(--cream);font-size:18px;cursor:pointer}
 .x:hover{border-color:var(--gold);color:var(--gold)}
 .x:focus{outline:none}.x:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -137,7 +138,7 @@ dialog[open]{animation:pop .45s cubic-bezier(.2,.7,.2,1)}
   .row3{grid-template-columns:1fr 1fr}
   .sh{flex-direction:column;align-items:flex-start}.sh p{text-align:left}
   footer{grid-template-columns:1fr}
-  .dlg{grid-template-columns:1fr}.dlg .pic{min-height:300px}.dlg .pic:after{background:linear-gradient(180deg,transparent 60%,var(--moss))}
+  .dlg{display:block;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.dlg .body{overflow:visible;max-height:none}.dlg .pic{min-height:300px}.dlg .pic:after{background:linear-gradient(180deg,transparent 60%,var(--moss))}
 }
 @media (max-width:560px){
   .wrap{padding:0 18px}
