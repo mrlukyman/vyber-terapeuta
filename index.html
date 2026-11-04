@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Niekto, kto pochopí aj to, čo bolo · výber terapeuta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#101d19; --forest:#14231f; --moss:#1b2e28; --moss2:#223a33; --line:rgba(239,233,221,.12);
+  --cream:#efe9dd; --mist:#c3d1c9; --mute:#8fa59a; --gold:#e3c393; --gold2:#c9a36c; --sage:#7fa894;
+  --serif:Fraunces,"Iowan Old Style",Georgia,serif; --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;color:var(--cream);font:15px/1.55 var(--sans);background:
+  radial-gradient(1200px 700px at 85% -10%,rgba(227,195,147,.10),transparent 60%),
+  radial-gradient(900px 600px at -10% 10%,rgba(127,168,148,.14),transparent 60%),
+  linear-gradient(180deg,var(--forest),var(--night) 1400px);min-height:100%}
+::selection{background:var(--gold);color:var(--night)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+/* hero */
+.hero{padding:72px 0 40px;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:end}
+.kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--sage);display:flex;gap:14px;align-items:center}
+.kicker:before{content:"";width:28px;height:1px;background:var(--sage)}
+h1{text-wrap:balance;font-family:var(--serif);font-weight:300;font-size:clamp(44px,6.4vw,84px);line-height:.98;letter-spacing:-.025em;margin:18px 0 0}
+h1 em{font-style:italic;color:var(--gold);font-weight:300}
+.lede{color:var(--mist);font-size:16.5px;max-width:420px;margin:0 0 6px}
+.lede b{color:var(--cream);font-weight:500}
+.how{display:flex;gap:22px;margin-top:20px;font-size:12.5px;color:var(--mute)}
+.how span{display:flex;gap:8px;align-items:baseline}
+.how i{font:italic 300 22px/1 var(--serif);color:var(--gold)}
+/* section heads */
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:18px;margin:56px 0 18px}
+.sh h2{font:300 30px/1.1 var(--serif);margin:0;letter-spacing:-.01em}
+.sh p{margin:0;color:var(--mute);font-size:13.5px;max-width:460px;text-align:right;text-wrap:balance}
+/* mosaic */
+.mosaic{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.tile{position:relative;border:0;padding:0;margin:0;border-radius:var(--r);overflow:hidden;cursor:pointer;background:var(--moss);color:inherit;text-align:left;font:inherit;aspect-ratio:1;isolation:isolate;
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 20px 50px rgba(0,0,0,.25);opacity:0;transform:translateY(14px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.tile.big{grid-row:span 2;aspect-ratio:auto;min-height:100%}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s;filter:saturate(.92)}
+.tile:hover img,.tile:focus-visible img{transform:scale(1.045);filter:saturate(1.05)}
+.tile:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.tile .ov{position:absolute;inset:auto 0 0 0;padding:22px 20px 18px;background:linear-gradient(180deg,transparent,rgba(9,18,15,.55) 35%,rgba(9,18,15,.92));z-index:1}
+.tile .rk{position:absolute;top:14px;left:14px;z-index:1;font:italic 300 14px/1 var(--serif);color:var(--cream);background:rgba(16,29,25,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:99px;padding:6px 10px}
+.tile .badge{position:absolute;top:14px;right:14px;z-index:1;font-size:11px;letter-spacing:.04em;background:rgba(16,29,25,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(227,195,147,.45);color:var(--gold);border-radius:99px;padding:4px 11px}
+.tile .nm{font:400 22px/1.1 var(--serif);letter-spacing:-.005em}
+.tile.big .nm{font-size:34px}
+.tile .rl{font-size:12.5px;color:var(--mist);margin-top:5px}
+.tile .mt{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tile .mt span{font-size:11.5px;color:var(--cream);border:1px solid var(--line);background:rgba(239,233,221,.06);border-radius:99px;padding:3px 10px}
+.tile .more{display:inline-flex;margin-top:14px;font-size:12.5px;color:var(--gold);gap:6px;align-items:center;opacity:.9}
+.tile .more:after{content:"→";transition:transform .3s}
+.tile:hover .more:after{transform:translateX(4px)}
+.note-tile{border-radius:var(--r);background:linear-gradient(160deg,var(--moss2),var(--moss));border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;opacity:0;animation:rise .8s .25s cubic-bezier(.2,.7,.2,1) forwards}
+.note-tile h3{font:300 24px/1.15 var(--serif);margin:0}
+.note-tile h3 em{color:var(--gold)}
+.note-tile p{margin:0;color:var(--mist);font-size:13.5px}
+.note-tile ol{margin:0;padding-left:18px;color:var(--mist);font-size:13px}
+.note-tile ol li{margin:3px 0}
+.scales-tile ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:13px;color:var(--mist)}
+.scales-tile li b{color:var(--cream);font-weight:500;display:inline-block;min-width:92px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@keyframes rise{to{opacity:1;transform:none}}
+/* removed */
+.gone{margin-top:56px;border-top:1px solid var(--line)}
+.gone summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px;padding:18px 0}
+.gone summary::-webkit-details-marker{display:none}
+.gone summary h2{font:300 30px/1.1 var(--serif);margin:0}
+.gone summary span{color:var(--mute);font-size:13.5px}
+.gone summary .tg{margin-left:auto;color:var(--gold);font-size:13px}
+.gone details[open] .tg{opacity:0}
+.gone .lead2{color:var(--mute);font-size:13.5px;margin:-4px 0 16px}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:10px;padding-bottom:8px}
+.gcard{display:flex;gap:12px;align-items:center;padding:10px;border-radius:16px;border:1px solid var(--line);background:rgba(239,233,221,.03);text-decoration:none;transition:background .3s,border-color .3s}
+.gcard:hover{background:rgba(239,233,221,.07);border-color:rgba(227,195,147,.3)}
+.gcard img{width:54px;height:54px;border-radius:12px;object-fit:cover;object-position:center 28%;filter:grayscale(1);opacity:.7;flex:none}
+.gcard b{display:block;font:400 15.5px/1.2 var(--serif)}
+.gcard span{font-size:12px;color:var(--mute)}
+/* footer */
+footer{margin-top:64px;padding:28px 0 60px;border-top:1px solid var(--line);color:var(--mute);font-size:13px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.sos{background:rgba(227,195,147,.08);border:1px solid rgba(227,195,147,.28);border-radius:18px;padding:18px 20px;color:var(--cream)}
+.sos b{font:400 18px var(--serif);display:block;margin-bottom:6px;color:var(--gold)}
+.sos a{text-decoration:none;border-bottom:1px solid rgba(227,195,147,.4)}
+footer p{margin:0 0 8px}
+footer .src a{color:var(--mist)}
+/* dialog */
+dialog{border:0;padding:0;background:transparent;color:var(--cream);max-width:min(980px,calc(100vw - 32px));width:100%;max-height:calc(100vh - 32px)}
+dialog::backdrop{background:rgba(6,12,10,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+dialog[open]{animation:pop .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+.dlg{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:var(--moss);border:1px solid var(--line);border-radius:28px;overflow:hidden;max-height:calc(100vh - 32px)}
+.dlg .pic{position:relative;min-height:420px}
+.dlg .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.dlg .pic:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 70%,var(--moss))}
+.dlg .body{padding:30px 32px 28px;overflow:auto}
+.x{position:absolute;top:14px;right:14px;z-index:3;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(16,29,25,.7);color:var(--cream);font-size:18px;cursor:pointer}
+.x:hover{border-color:var(--gold);color:var(--gold)}
+.x:focus{outline:none}.x:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.dlg .k2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage)}
+.dlg h3{font:300 36px/1.05 var(--serif);margin:8px 0 6px;letter-spacing:-.015em}
+.dlg .st{color:var(--mist);font-size:13.5px}
+.dlg .ap{margin:14px 0 0;font-size:14.5px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 0}
+.chips span{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:4px 11px;color:var(--mist)}
+.chips span.g{border-color:rgba(227,195,147,.4);color:var(--gold)}
+.blk{margin-top:22px}
+.blk h4{margin:0 0 10px;font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.bars{display:grid;grid-template-columns:120px 1fr 20px;gap:9px 14px;align-items:center;font-size:13px;color:var(--mist)}
+.trk{height:6px;border-radius:9px;background:rgba(239,233,221,.09);overflow:hidden}
+.trk i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--sage),var(--gold));transform-origin:left;animation:grow .9s .15s cubic-bezier(.2,.7,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.bars em{font:normal 400 16px var(--serif);color:var(--cream);text-align:right}
+.ks{display:grid;gap:8px}
+.ksr{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;font-size:12px;color:var(--mute)}
+.ksr span:first-child{text-align:right}
+.dots{display:flex;gap:7px;align-items:center}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(239,233,221,.16)}
+.dots i.on{width:12px;height:12px;background:var(--gold);box-shadow:0 0 0 4px rgba(227,195,147,.14)}
+.why{margin-top:22px;padding:14px 16px;border-left:2px solid var(--gold);background:rgba(227,195,147,.06);border-radius:0 12px 12px 0;font:italic 300 17px/1.45 var(--serif);color:var(--cream)}
+.nt{margin-top:16px;color:var(--mist);font-size:14px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:14px;border-radius:99px;padding:11px 20px;border:1px solid var(--gold);background:var(--gold);color:var(--night);transition:filter .2s}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:var(--cream);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:20px;padding-top:48px}
+  .mosaic{grid-template-columns:1fr 1fr}
+  .tile.big{grid-column:span 2;grid-row:auto;aspect-ratio:1/1}
+  .row3{grid-template-columns:1fr 1fr}
+  .sh{flex-direction:column;align-items:flex-start}.sh p{text-align:left}
+  footer{grid-template-columns:1fr}
+  .dlg{grid-template-columns:1fr}.dlg .pic{min-height:300px}.dlg .pic:after{background:linear-gradient(180deg,transparent 60%,var(--moss))}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .mosaic,.row3{grid-template-columns:1fr}
+  .tile.big{grid-column:auto}
+  .tile.big .nm{font-size:28px}
+  .bars{grid-template-columns:100px 1fr 18px}
+  .dlg .body{padding:24px 20px}
+}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.tile,.note-tile{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="kicker">Online · po slovensky · november 2026</div>
+      <h1>Niekto, kto <em>pochopí</em> aj to, čo bolo.</h1>
+    </div>
+    <div>
+      <p class="lede">Šesť terapeutov na <b>úzkosť a panické ataky</b>, <b>traumu</b> a <b>prácu s minulosťou</b>. Vybraní z vyše sto profilov.</p>
+      <div class="how"><span><i>3</i>odporúčaní</span><span><i>3</i>ďalší v hre</span><span><i id="goneN">0</i>vyradení</span></div>
+    </div>
+  </header>
+
+  <div class="sh"><h2>Odporúčaná trojica</h2><p>Napíš všetkým trom naraz. Prvé sedenie ber ako test, či ti človek sedí.</p></div>
+  <section class="mosaic" id="mosaic"></section>
+
+  <div class="sh"><h2>Ďalší v hre</h2><p>Skúsení terapeuti, ktorí sa oplatia ako záloha.</p></div>
+  <section class="row3" id="rest"></section>
+
+  <section class="gone">
+    <details>
+      <summary><h2>Vyradení</h2><span id="goneTxt"></span><span class="tg">zobraziť</span></summary>
+      <p class="lead2">Tentoraz nie. Nechávam ich tu, keby si zmenil názor.</p>
+      <div class="ggrid" id="gone"></div>
+    </details>
+  </section>
+
+  <footer>
+    <div class="sos"><b>Ak je zle hneď</b>Linka dôvery Nezábudka <a href="tel:0800800566">0800 800 566</a> (nonstop) · Krízová linka pomoci IPčko <a href="tel:0800500333">0800 500 333</a> (nonstop) · v ohrození života <a href="tel:112">112</a></div>
+    <div>
+      <p>Hodnotenie 1–5 je môj odhad z textov profilov, nie ich vlastné skóre. Bodky sú vlastný popis terapeuta na ksebe, kde ho má. Odporúčania sú z Hedepy a ksebe. Fotky sú z verejných profilov terapeutov.</p>
+      <p class="src">Zdroje: <a href="https://eftinstitute.sk/psychoterapeuti/">EFT Institute</a> · <a href="https://eftinstitute.sk/cennik/">cenník EFT</a> · <a href="https://app.hedepy.sk/najst-terapeuta">Hedepy</a> · <a href="https://www.ksebe.sk/">ksebe</a> · <a href="https://terapiavbratislave.sk/profil/">J. Halamová</a></p>
+    </div>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlgName"></dialog>
+
+<script>
+const DATA=[{"src": "EFT Institute", "url": "https://eftinstitute.sk/psychoterapeut/mgr-silvia-aziriova-phd/", "name": "Mgr. Silvia Aziriová, PhD.", "appr": "KBT + EFT + EMDR + schématerapia", "status": "Certifikovaná (EFT), klinická psychologička", "exp": "16 rokov", "price": 60, "recs": null, "U": 5, "T": 5, "M": 5, "A": 5, "S": 5, "note": "Jediná plne certifikovaná v EFT tíme. Úzkosť, stres, trauma. Online aj Bratislava. Odborná garantka inštitútu.", "fit": 25, "img": "mgr-silvia-aziriova-phd", "recsLabel": "153 odporúčaní · ksebe", "ks": {"url": "https://www.ksebe.sk/expert/silvia-aziriova", "recs": 153, "scales": {"Prítomnosť vs. minulosť": 2, "Rozsah sedenia": 4, "Holistická alebo špecifická": 5, "Verbálnosť": 3, "Spiritualita": 2, "Rola odborníka": 3}}}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/jozef-baran", "name": "Mgr. Jozef Baran", "appr": "Geštalt + ACT + trauma (EMDR, parts work, CPT)", "status": "Klinický psychológ, ukončený výcvik", "exp": "10 000+ h", "price": 55, "recs": 24, "U": 4, "T": 5, "M": 4, "A": 4, "S": 5, "note": "Certifikát Complex Trauma. Mindfulness. Veľa voľných termínov.", "fit": 22, "img": "jozef-baran", "recsLabel": "24 odporúčaní · Hedepy", "ks": null}, {"src": "vlastný web", "url": "https://terapiavbratislave.sk/profil/", "name": "prof. Mgr. Júlia Halamová, PhD.", "appr": "EFT + EFT pre komplexnú traumu + somatická terapia traumy + EMDR tréning", "status": "Certifikovaná EFT terapeutka, supervízorka a trénerka", "exp": "Psychoterapeutka od 2007", "price": 80, "recs": null, "U": 4, "T": 5, "M": 4, "A": 4, "S": 5, "note": "Zakladateľka EFT Institute. Profesorka psychológie na UK. 80 € za 45 min. Online cez Doxy, dlhodobú kapacitu treba potvrdiť.", "img": "julia-halamova", "recsLabel": null, "ks": null, "fit": 22, "dur": 45}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/barbora-kiczova", "name": "Mgr. Barbora Kiczková, PhD.", "appr": "PCA + systemika + trauma", "status": "Psychologička, PhD klinická psychológia", "exp": "8000+ h", "price": 55, "recs": 16, "U": 4, "T": 4, "M": 4, "A": 3, "S": 5, "note": "10 rokov s klientmi. Kurz EMDR. Bratislava.", "fit": 20, "img": "barbora-kiczova", "recsLabel": "16 odporúčaní · Hedepy", "ks": null}, {"src": "ksebe", "url": "https://www.ksebe.sk/expert/alzbeta-kajankova", "name": "Mgr. Alžbeta Kajanková", "appr": "KBT (5-ročný výcvik Odyssea)", "status": "Psychologička, ukončený výcvik", "exp": "6 rokov praxe", "price": 45, "recs": 27, "U": 5, "T": 3, "M": 2, "A": 5, "S": 4, "note": "Analyzuje problém a hľadá riešenia. Záchvaty strachu, nutkavé myšlienky. Sama sa opisuje ako zameraná na prítomnosť.", "img": "alzbeta-kajankova", "recsLabel": "27 odporúčaní · ksebe", "ks": {"url": "https://www.ksebe.sk/expert/alzbeta-kajankova", "recs": 27, "scales": {"Prítomnosť vs. minulosť": 1, "Rozsah sedenia": 3, "Holistická alebo špecifická": 2, "Verbálnosť": 6, "Spiritualita": 3, "Rola odborníka": 4}}, "fit": 19}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/rudolf-hauzer", "name": "Mgr. Rudolf Hauzer, MBA", "appr": "Hlbinná dynamická (SUR)", "status": "Absolvent výcviku", "exp": "10 000+ h", "price": 55, "recs": 11, "U": 3, "T": 3, "M": 5, "A": 3, "S": 4, "note": "Definovanie problému, autor kníh.", "fit": 18, "img": "rudolf-hauzer", "recsLabel": "11 odporúčaní · Hedepy", "ks": null}], WHY={"mgr-silvia-aziriova-phd": "Pokrýva všetko naraz: KBT na paniku, EMDR na traumu, schémy na minulosť. 153 odporúčaní na ksebe.", "jozef-baran": "Klinický psychológ so silným zameraním na traumu. Veľa voľných termínov.", "julia-halamova": "Najskúsenejšia EFT terapeutka na Slovensku. Výcviky na komplexnú traumu. Online sedenia treba potvrdiť."}, NOPE=[{"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/zuzana-muellerova", "name": "Mgr. Zuzana Müllerová, PhD.", "appr": "PCA (Rogers), orientácia na výskum", "status": "Certifikovaná psychoterapeutka (SPS, 2008)", "exp": "1000+ h na Hedepy, prax od 2008", "price": 55, "recs": 104, "U": 4, "T": 4, "M": 4, "A": 4, "S": 5, "note": "Najviac odporúčaní na Hedepy. Sleduje van der Kolka, Matého, Perryho.", "fit": 21, "img": "zuzana-muellerova", "recsLabel": "104 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/nikola-juskova", "name": "Mgr. Nikola Jusková", "appr": "KBT (kognitívno-behaviorálna)", "status": "Klinická psychologička, certifikovaná psychoterapia", "exp": "10+ rokov", "price": 55, "recs": 13, "U": 5, "T": 3, "M": 3, "A": 5, "S": 5, "note": "10 rokov v ambulancii klinickej psychológie. Výcvik KBT v ABC inštitúte.", "fit": 21, "img": "nikola-juskova", "recsLabel": "13 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/zuzana-pjeczkova-repkova", "name": "Mgr. Zuzana Pjeczková Repková", "appr": "Adlerovská + EMDR", "status": "Psychologička, ukončené výcviky", "exp": "1500+ h", "price": 44, "recs": 3, "U": 4, "T": 5, "M": 4, "A": 4, "S": 4, "note": "Akreditovaný EMDR (CIPE). Pýta sa na detstvo a presvedčenia.", "fit": 21, "img": "zuzana-pjeczkova-repkova", "recsLabel": "52 odporúčaní · ksebe, 3 · Hedepy", "ks": {"url": "https://www.ksebe.sk/expert/zuzana-pjeczkova-repkova", "recs": 52, "scales": {"Prítomnosť vs. minulosť": 1, "Rozsah sedenia": 6, "Holistická alebo špecifická": 3, "Verbálnosť": 5, "Spiritualita": 3, "Rola odborníka": 4}}}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/michaela-jombikova-janakova", "name": "Mgr. Michaela Jombíková Janáková, PhD.", "appr": "Dynamická a hlbinná psychoterapia (SUR)", "status": "Absolventka výcviku", "exp": "3000+ h", "price": 44, "recs": 9, "U": 3, "T": 4, "M": 5, "A": 4, "S": 4, "note": "Ako minulosť ovplyvňuje súčasnosť. Sny, imaginácia.", "fit": 20, "img": "michaela-jombikova-janakova", "recsLabel": "9 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/alexandra-kohutova", "name": "PhDr. Alexandra Kohutová", "appr": "Geštalt + relaxačná a symbolická", "status": "Klinická psychologička, psychoterapeutka", "exp": "Prax od 2005", "price": 65, "recs": 13, "U": 4, "T": 3, "M": 4, "A": 3, "S": 5, "note": "Dlhoročná prax. Aktuálne bez voľných termínov.", "fit": 19, "img": "alexandra-kohutova", "recsLabel": "13 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/petra-galisova", "name": "Mgr. Petra Gálisová", "appr": "KBT (5-ročný výcvik Odyssea)", "status": "Psychologička, ukončený výcvik", "exp": "500+ h na Hedepy", "price": 55, "recs": 46, "U": 5, "T": 3, "M": 2, "A": 5, "S": 4, "note": "Výcvik pod Praškom a Šlepeckým. Veľa odporúčaní.", "fit": 19, "img": "petra-galisova", "recsLabel": "46 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/aneta-ublanicova", "name": "Mgr. Aneta Ublaničová", "appr": "Psychoanalytická", "status": "Psychologička, ukončený základný výcvik", "exp": "5000+ h", "price": 65, "recs": 19, "U": 3, "T": 3, "M": 5, "A": 4, "S": 4, "note": "Nevedomé vzorce, sny, opakujúce sa situácie.", "fit": 19, "img": "aneta-ublanicova", "recsLabel": "19 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/katarina-slahorova", "name": "Mgr. Katarína Šlahorová", "appr": "Integratívny + schématerapia (krátkodobý)", "status": "Psychologička", "exp": "16 rokov v nemocnici", "price": 44, "recs": 14, "U": 4, "T": 3, "M": 4, "A": 4, "S": 4, "note": "Neurológia a psychiatria v ÚVN Ružomberok.", "fit": 19, "img": "katarina-slahorova", "recsLabel": "14 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/elena-meskova", "name": "Mgr. Elena Mešková", "appr": "PCA + párová a rodinná", "status": "Absolventka výcviku, supervízorka PCA", "exp": "10 000+ h", "price": 55, "recs": 6, "U": 3, "T": 4, "M": 4, "A": 3, "S": 4, "note": "Trauma, psychosomatika, dlhodobé zmeny.", "fit": 18, "img": "elena-meskova", "recsLabel": "6 odporúčaní · Hedepy", "ks": null}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/andrea-benuskova", "name": "PhDr. Andrea Beňušková", "appr": "Psychodynamická + EMDR + KIP", "status": "Klinická psychologička, psychoterapeutka", "exp": "5000+ h", "price": 55, "recs": 2, "U": 4, "T": 5, "M": 5, "A": 3, "S": 5, "note": "EMDR (SIPE), katatýmno-imaginatívna psychoterapia. Bratislava.", "fit": 22, "img": "andrea-benuskova", "ks": null, "recsLabel": "2 odporúčaní · Hedepy"}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/marianna-sramkova", "name": "PhDr. Marianna Šramková, PhD.", "appr": "KBT (4-ročný výcvik)", "status": "Psychoterapeutka, supervízorka", "exp": "3000+ h", "price": 65, "recs": 32, "U": 5, "T": 3, "M": 2, "A": 5, "S": 5, "note": "Práca s myšlienkami, emóciami a správaním. Svit.", "fit": 20, "img": "marianna-sramkova", "ks": null, "recsLabel": "32 odporúčaní · Hedepy"}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/henrieta-cechovicova", "name": "Mgr. Henrieta Čechovičová", "appr": "PCA + psychotraumatológia a EMDR", "status": "Absolventka výcviku", "exp": "1000+ h", "price": 44, "recs": 10, "U": 4, "T": 5, "M": 4, "A": 3, "S": 4, "note": "PCA od 2008. EMDR (ČIPE 2023).", "fit": 20, "img": "henrieta-cechovicova", "ks": null, "recsLabel": "10 odporúčaní · Hedepy"}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/karina-dianiskova", "name": "Mgr. Karina Dianišková", "appr": "Psychoanalytická psychoterapia", "status": "Certifikovaná (IAPSA, SPS)", "exp": "1500+ h", "price": 65, "recs": 0, "U": 4, "T": 3, "M": 5, "A": 4, "S": 4, "note": "Spája minulosť s prítomnosťou. Preferuje dlhodobú spoluprácu.", "fit": 20, "img": "karina-dianiskova", "ks": null, "recsLabel": "0 odporúčaní · Hedepy"}, {"src": "Hedepy", "url": "https://app.hedepy.sk/najst-terapeuta/maria-vlkovicova", "name": "Mgr. Mária Vlkovičová", "appr": "Transformačná systemická (Satir)", "status": "Certifikovaná psychoterapeutka (SPS)", "exp": "1500+ h", "price": 55, "recs": 21, "U": 4, "T": 4, "M": 4, "A": 3, "S": 4, "note": "Hlavné témy: strach, trauma, stres.", "fit": 19, "img": "maria-vlkovicova", "ks": null, "recsLabel": "21 odporúčaní · Hedepy"}];
+const LBL=[["U","Úzkosť a panika"],["T","Trauma"],["M","Minulosť"],["A","Analytický prístup"],["S","Skúsenosť"]];
+const KS=[["Prítomnosť vs. minulosť","Prítomnosť","Minulosť"],["Rozsah sedenia","Krátkodobé","Dlhodobé"],["Holistická alebo špecifická","Konkrétny problém","Celok"],["Verbálnosť","Neverbálne","Rozhovor"],["Spiritualita","Nerieši sa","Dôležitá"],["Rola odborníka","Nedirektívna","Direktívna"]];
+const SHORT={"mgr-silvia-aziriova-phd":"Klinická psychologička · KBT · EMDR · schémy","jozef-baran":"Klinický psychológ · geštalt · trauma","julia-halamova":"Certifikovaná EFT trénerka · komplexná trauma","barbora-kiczova":"PhD klinická psychológia · PCA · trauma","alzbeta-kajankova":"KBT · záchvaty strachu","rudolf-hauzer":"Hlbinná dynamická terapia"};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const price=d=>d.price?`${d.price} € / ${d.dur||50} min`:"cena neuvedená";
+const plain=n=>n.replace(/^(prof\.\s*)?((Mgr|PhDr|Ing|Bc|MUDr|PaedDr)\.\s*(et\s*)?)+/,"").replace(/,?\s*(PhD\.|MBA|PCC)\.?/g,"").trim();
+DATA.forEach((d,i)=>d.rank=i+1);
+function tile(d,i,big){
+  const isTop=!!WHY[d.img];
+  return `<button class="tile${big?" big":""}" style="animation-delay:${i*90}ms" data-i="${d.rank-1}" aria-haspopup="dialog">
+    <img src="img/${esc(d.img)}.jpg" alt="" loading="${i<3?"eager":"lazy"}">
+    <span class="rk">${String(d.rank).padStart(2,"0")}</span>
+    <span class="badge">${d.fit} / 25${isTop&&i===0?" · prvá voľba":""}</span>
+    <span class="ov"><span class="nm" style="display:block">${esc(plain(d.name))}</span>
+      <span class="rl" style="display:block">${esc(SHORT[d.img]||d.appr)}</span>
+      <span class="mt"><span>${price(d)}</span>${d.recsLabel?`<span>${esc(d.recsLabel.split(",")[0])}</span>`:""}</span>
+      <span class="more">Zobraziť detail</span></span>
+  </button>`}
+const TOP3=DATA.filter(d=>WHY[d.img]), rest=DATA.filter(d=>!WHY[d.img]);
+document.getElementById("mosaic").innerHTML=
+  tile(TOP3[0],0,true)+tile(TOP3[1],1)+tile(TOP3[2],2)+
+  `<div class="note-tile"><h3>Ako <em>vyberať</em></h3><p>Vzťah s terapeutom predpovedá výsledok viac než metóda. Daj prednosť pocitu.</p><ol><li>Napíš trom naraz.</li><li>Spýtaj sa, ako by prepojili paniku teraz s minulosťou.</li><li>Po prvom sedení sa rozhodni podľa pocitu.</li></ol></div>`+
+  `<div class="note-tile scales-tile"><h3>Čo znamená <em>skóre</em></h3><ul>${LBL.map(([k,l])=>`<li><b>${l.split(" ")[0]}</b>${{U:"má metódu na paniku",T:"výcvik v práci s traumou",M:"hľadá, ako minulosť tvorí dnešok",A:"vysvetlí, ako psychika funguje",S:"výcvik, certifikácia, roky"}[k]}</li>`).join("")}</ul></div>`;
+document.getElementById("rest").innerHTML=rest.map((d,i)=>tile(d,i+3)).join("");
+document.getElementById("gone").innerHTML=NOPE.map(d=>`<a class="gcard" href="${esc(d.url)}" target="_blank" rel="noopener"><img src="img/${esc(d.img)}.jpg" alt="" loading="lazy"><div><b>${esc(plain(d.name))}</b><span>${esc(d.appr)}${d.price?" · "+d.price+" €":""}</span></div></a>`).join("");
+document.getElementById("goneTxt").textContent=`${NOPE.length} ľudí`;
+document.getElementById("goneN").textContent=NOPE.length;
+
+const dlg=document.getElementById("dlg");
+function ks(k){return `<div class="blk"><h4>Ako sa opisuje sama · <a href="${esc(k.url)}" target="_blank" rel="noopener">ksebe</a></h4><div class="ks">${KS.map(([key,l,r])=>{const v=k.scales[key];let s="";for(let i=1;i<=6;i++)s+=`<i class="${i===v?"on":""}"></i>`;return `<div class="ksr"><span>${l}</span><span class="dots" role="img" aria-label="${esc(key)}: ${v} zo 6">${s}</span><span>${r}</span></div>`}).join("")}</div></div>`}
+function openD(d){
+  dlg.innerHTML=`<div class="dlg"><div class="pic"><img src="img/${esc(d.img)}.jpg" alt="${esc(d.name)}"></div>
+   <div class="body"><button class="x" aria-label="Zavrieť">×</button>
+    <div class="k2">${String(d.rank).padStart(2,"0")} · ${esc(d.src)}</div>
+    <h3 id="dlgName">${esc(d.name)}</h3>
+    <div class="st">${esc(d.status)}</div>
+    <p class="ap">${esc(d.appr)}</p>
+    <div class="chips"><span class="g">${d.fit} / 25</span><span>${price(d)}</span>${d.recsLabel?`<span>${esc(d.recsLabel)}</span>`:""}<span>${esc(d.exp)}</span></div>
+    ${WHY[d.img]?`<div class="why">${esc(WHY[d.img])}</div>`:""}
+    <div class="blk"><h4>Môj odhad zamerania</h4><div class="bars">${LBL.map(([k,l])=>`<span>${l}</span><span class="trk"><i style="width:${d[k]*20}%"></i></span><em>${d[k]}</em>`).join("")}</div></div>
+    ${d.ks?ks(d.ks):""}
+    ${d.note?`<p class="nt">${esc(d.note)}</p>`:""}
+    <div class="cta"><a class="btn" href="${esc(d.url)}" target="_blank" rel="noopener">Otvoriť profil a rezervovať →</a>${d.ks&&d.src!=="ksebe"?`<a class="btn ghost" href="${esc(d.ks.url)}" target="_blank" rel="noopener">Profil na ksebe</a>`:""}</div>
+   </div></div>`;
+  dlg.querySelector(".x").onclick=()=>dlg.close();
+  dlg.showModal();
+}
+document.addEventListener("click",e=>{const t=e.target.closest(".tile");if(t)openD(DATA[+t.dataset.i])});
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+</script>
+</body>
+</html>
